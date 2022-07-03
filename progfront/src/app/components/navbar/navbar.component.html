@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid pdr0 pdl0">
+    <div class="row">
+      <mat-toolbar color="warn">
+        <!--Home-->
+        <div class="col">
+          <a routerLink="" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>home</mat-icon>
+          </a>
+        </div>
+        <div class="col">
+          <span class="span-center">Payroll Manager</span>
+        </div>
+
+        <div class="col" style="text-align:end ;">
+          <!--Login-->  
+          <a 
+          *ngIf="!login.isLoggedIn()"
+          routerLink="/login" mat-icon-button class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon">
+            Login
+          </a>
+          <!--Signup-->    
+          <a 
+          *ngIf="!login.isLoggedIn()"
+          [routerLink]="'/signup'" mat-icon-button class="example-icon mr10 ml10"
+            aria-label="Example icon-button with share icon ">
+            SignUp
+          </a>
+          <!--Log Out-->
+          
+          <a 
+          (click) ='logout()'
+          *ngIf="login.isLoggedIn()"
+          [routerLink]="'/signup'" mat-icon-button class="example-icon mr10 ml10"
+            aria-label="Example icon-button with share icon ">
+            Log Out
+          </a>
+          <a
+          *ngIf="login.isLoggedIn()"
+          mat-icon-button class="example-icon mr30 ml10"
+            aria-label="Example icon-button with share icon ">
+            {{user.userName}}
+          </a>
+        </div>
+      </mat-toolbar>
+    </div>
+  </div>
+</div>

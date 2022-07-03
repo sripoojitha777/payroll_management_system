@@ -1,0 +1,93 @@
+<mat-card class="bg-light">
+<div class="bootstrap-wrapper">
+    <div class="container" >
+        <div class="row ">
+            <div class="col-md-11">
+                <mat-card class="text-center">
+                
+Your Profile                
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+</mat-card>
+<!--{{user| json}}-->
+<mat-card class="bg-light">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img 
+                    *ngIf="user.authorities[0].authority=='Admin'"
+                    src="https://bootdey.com/img/Content/avatar/avatar7.png" class="profile-img" alt="">
+                    
+                    <img 
+                    *ngIf="user.authorities[0].authority=='NORMAL'"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkYvq7zWeYgf2yDxPRExBk-l4hhCzk6FyhWA&usqp=CAU" class="profile-img" alt="">
+                    <br>
+                    <table class="table-width table-pad">
+                        <tr>
+                            <td>Username:</td>
+                             <td>{{user.userName}}</td>
+                        </tr>
+                        
+                        <tr *ngIf="user.authorities[0].authority=='Admin'">
+                            <td>Role:</td>
+                             <td>Administrator</td>
+                        </tr>
+                        <tr *ngIf="user.authorities[0].authority=='NORMAL'">
+                            <td>Role:</td>
+                             <td>Employee</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-8">
+                    <table class="table table-width">
+                        <tr>
+                            <td>First Name:</td>
+                             <td>{{user.firstName}}</td>
+                             
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                             <td>{{user.lastName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                             <td>{{user.email}}</td>
+                        </tr>
+                        <tr *ngIf="user.authorities[0].authority=='Admin'">
+                            <td>Designation:</td>
+                             <td>Administrator</td>
+                        </tr>
+                        <tr *ngIf="user.authorities[0].authority=='NORMAL'">
+                            <td>Designation:</td>
+                             <td>{{user.designation}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                             <td>{{user.phone}}</td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-card-actions class="text-center"
+    *ngIf="user.authorities[0].authority=='Admin'"
+    >
+        <button mat-raised-button color="primary"
+        routerLink="/admin/edit"
+        >Update</button>
+    </mat-card-actions>
+
+    <mat-card-actions class="text-center"
+    *ngIf="user.authorities[0].authority=='NORMAL'"
+    >
+        <button mat-raised-button color="primary"
+        routerLink="'/user/edit"
+        >Update</button>
+    </mat-card-actions>
+</mat-card>

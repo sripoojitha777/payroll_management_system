@@ -1,0 +1,49 @@
+<mat-card class="bg-light">
+    <div class="bootstrap-wrapper">
+        <div class="container" >
+            <div class="row ">
+                <div class="col-md-11">
+                    <mat-card class="text-center">                 
+    Employees Details             
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="bg-light">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                    
+                    <table class="table-width table-pad table th" >
+                        <tr>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Designation</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr *ngFor="let employee of employees" class="text-center td-bottom">
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL'">{{employee.id}}</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL'">{{employee.userName}}</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL'">{{employee.firstName}}</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL'">{{employee.lastName}}</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL'">{{employee.designation}}</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL'">{{employee.email}}</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL'">{{employee.phone}}</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL' && employee.enabled==true">Active</td>
+                            <td *ngIf="employee.authorities[0].authority=='NORMAL' && employee.enabled==false">Away</td>
+
+                            
+                        </tr>
+                    </table>
+
+                    
+            </div>
+        </div>
+    </div>
+</mat-card>

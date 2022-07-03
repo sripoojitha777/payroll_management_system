@@ -1,0 +1,48 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.width30{
+    text-align: center;
+    width: 30%;
+}
+.ml10{
+    margin-left:10px ;
+}
+.mr10{
+    margin-right:10px ;
+}
+.mt10{
+    margin-top:10px ;
+}
+.mb10{
+    margin-bottom:10px ;
+}
+.span-center {
+    display: table;
+    margin: 0 auto;
+}
+
+.pdr0{
+    padding-right: 0px;
+}
+.pdl0{
+    padding-left: 0px;
+}
+.pdt0{
+    padding-top: 0px;
+}
+.pdb0{
+    padding-bottom: 0px;
+}
+.ml30{
+    margin-left:30px ;
+}
+.mr30{
+    margin-right:30px ;
+}
+.mt30{
+    margin-top:30px ;
+}
+.mb30{
+    margin-bottom:30px ;
+}
